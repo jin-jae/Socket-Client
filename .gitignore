@@ -1,0 +1,10 @@
+# exec file
+client
+
+# make out file
+*.o
+
+# IDE files
+.idea
+.vscode
+cmake-build-debug
