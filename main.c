@@ -1,6 +1,7 @@
 #include "library.h"
 
-int main(int argc, char* argv[]) {
+int main(void) {
+    // Client program 실행
     Client();
     return 0;
 }
