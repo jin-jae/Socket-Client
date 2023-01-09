@@ -48,6 +48,26 @@ void    createMessage(char *message, char *address, char *hierarchy)
 
     // 헤더의 끝을 알립니다.
     strcat(message, END_LINE);
+
+    // POST 요청인 경우 body에 정보를 담아서 보냅니다.
+    if (hierarchy != NULL && !strcmp(hierarchy, "login.html"))
+    {
+        char    id[10];
+        char    password[10];
+        printf("POST Method needs parameter (enter ID and Password)\n");
+        printf("ID: ");
+        scanf("%s", id);
+        printf("Password: ");
+        scanf("%s", password);
+
+        strcat(message, "id: ");
+        strcat(message, id);
+        strcat(message, " ");
+        strcat(message, "pw: ");
+        strcat(message, password);
+
+        strcat(message, END_LINE);
+    }
 }
 
 void    receiveResponse(int *localSocket)
